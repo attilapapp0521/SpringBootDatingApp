@@ -1,0 +1,33 @@
+jwt:
+    secret: springBootIsNice!
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/dating-app?serverTimezone=UTC&characterEncoding=utf8
+    username: root
+    password: password
+
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+
+cors-policies: http://localhost:4200, http://127.0.0.1:4200
+registration-verify-url: http://localhost:4200
+
+logging:
+  level:
+    root: info
+    com.example: debug
+    org.springframework.web: info
+    org.springframework.security.web: info
+    org.hibernate: error
+
+cloud.cloud_name: dwhzipyci
+cloud.api_key: 761315847795885
+cloud.api_secret: YGDsjH8TQegI8J_AXNxaQJRLlgM
+
+
+
+

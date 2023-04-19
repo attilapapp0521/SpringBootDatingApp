@@ -139,6 +139,8 @@ Desktop.ini
 # ESLint
 ######################
 .eslintcache
+
+#targets
 /service/target/
 /core/target/
 /api/target/
