@@ -13,7 +13,7 @@ import com.datingapp.domain.MessageEntity;
 public interface MessageRepository extends JpaRepository<MessageEntity, Long> {
 
 	@Query("SELECT m FROM MessageEntity m WHERE m.recipient.username = :username " +
-			"AND m.recipientDelete = false ORDER BY m.messageSent DESC ")
+			"AND m.recipientDeleted = false ORDER BY m.messageSent DESC ")
 	Page<MessageEntity> getMessagesForUserInbox(@Param("username") String username,
 			Pageable pageable);
 

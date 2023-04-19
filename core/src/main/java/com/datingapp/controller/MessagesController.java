@@ -42,7 +42,6 @@ public class MessagesController {
 		log.info("Get messaging...");
 		Page<MessageDto> users = messageService.getMessagesForUsers(container, pageable);
 		HttpHeaders httpHeaders = new HttpHeaders();
-		//TODO nem működik
 		HttpExtension.addPaginationHeader(httpHeaders, users.getNumber(),
 				users.getNumberOfElements(), users.getTotalElements(),
 				users.getTotalPages());
