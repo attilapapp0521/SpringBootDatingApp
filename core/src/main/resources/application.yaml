@@ -14,9 +14,9 @@ spring:
 
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/dating-app
-    username: dbuser
-    password: dbpassword
+    url: jdbc:postgresql://dpg-ch1fgcqut4m00rpm4dt0-a.oregon-postgres.render.com:5432/database_dating_app
+    username: database_dating_app_user
+    password: PnNE1BIdjNswoVc99l1urorDZAxDANZw
   #    url: jdbc:postgresql://${POSTGRES_HOST:localhost:5433}/${POSTGRES_DATABASE:dating-app}?user=${POSTGRES_USER:dbuser}&password=${POSTGRES_PASSWORD:dbpassword}
   jpa:
     hibernate.ddl-auto: update
