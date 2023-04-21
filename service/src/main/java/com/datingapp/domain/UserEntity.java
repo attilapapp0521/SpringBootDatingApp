@@ -3,10 +3,8 @@ package com.datingapp.domain;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.CollectionTable;
-import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -18,10 +16,6 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
 import com.datingapp.enumeration.Roles;
 
 import lombok.EqualsAndHashCode;
@@ -29,7 +23,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "user")
+@Table(name = "app_user")
 @Getter
 @Setter
 @EqualsAndHashCode
@@ -45,17 +39,16 @@ public class UserEntity {
 	private LocalDateTime created;
 	private LocalDateTime lastActive;
 	private String gender;
-	@Lob
+
 	private String introduction;
-	@Lob
 	private String lookingFor;
-	@Lob
+
 	private String interests;
 	private String city;
 	private String country;
 	@Enumerated(EnumType.STRING)
 	@ElementCollection(targetClass = Roles.class, fetch = FetchType.EAGER)
-	@CollectionTable(name = "ROLES")
+	@CollectionTable(name = "roles")
 	private List<Roles> roles = new ArrayList<>();
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	private List<ImageEntity> photos;

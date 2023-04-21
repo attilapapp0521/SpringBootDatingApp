@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  app:
+    image: spring-app
+    depends_on:
+      - postgresql
+    ports:
+      - "8080:8080"
+  postgresql:
+    image: postgres:15
+    environment:
+      - POSTGRES_PASSWORD=dbpassword
+      - POSTGRES_DB=dating-app
+      - POSTGRES_USER=dbuser
+    ports:
+      - "5433:5432"
+
+    volumes:
+      - type: volume
+        source: postgresql-data
+        target: /var/lib/postgresql
+
+volumes:
+  postgresql-data:
